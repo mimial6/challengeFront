@@ -1,0 +1,26 @@
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <h2 class="text-center text-uppercase text-secondary mb-0">Repositorios de GitHub</h2>
+    <hr class="star-dark mb-5">
+      	<div class="row">
+		  <div class="col-sm-6 col-md-4" *ngFor="let repo of repos">
+		    <div class="thumbnail">
+		      <div class="caption">
+	        	<div *ngFor="let branch of repo.branches">
+		        	<div *ngIf="branch.name == 'master' && branch.commit.url.includes(repo.name) && branch.urlCommit.files">
+		        		<div *ngFor="let file of branch.urlCommit.files">
+        					<div *ngIf="file.filename && file.filename.includes('img/')">
+        				    	<img src="{{file.raw_url}}">
+        					</div>
+	        			</div>
+		        	</div>
+	        	</div>
+		        <h3>{{repo.name}}</h3>
+		        <p>{{repo.full_name}}</p>
+		        <p><a href="{{repo.html_url}}" class="btn btn-primary" role="button">Acceder</a></p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+  </div>
+</section>

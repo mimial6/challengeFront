@@ -1,0 +1,72 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "challenge"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "./app/lib/bootstrap/css/bootstrap.min.css",
+        "./app/lib/font-awesome/css/font-awesome.min.css",
+        "./app/lib/magnific-popup/magnific-popup.css",
+        "./app/lib/freelancer.min.css",
+        "styles.css"
+      ],
+      "scripts": [
+        "./app/lib/jquery/jquery.min.js",
+        "./app/lib/bootstrap/js/bootstrap.bundle.min.js",
+        "./app/lib/jquery-easing/jquery.easing.min.js",
+        "./app/lib/magnific-popup/jquery.magnific-popup.min.js",
+        "./app/lib/jqBootstrapValidation.js",
+        "./app/lib/contact_me.js",
+        "./app/lib/freelancer.min.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}
